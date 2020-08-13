@@ -19,25 +19,25 @@ with sr.Microphone() as source:
             audio = r.listen(source)
             try:
                 text = r.recognize_google(audio)
-                print("you said _ {}".format(text))
+                print("estas buscando _ {}".format(text))
                 url = 'https://www.google.co.in/search?q='
                 search_url = url + text
                 webbrowser.open(search_url)
             except:
                 print("no se escucho")
-    if texto == "spotify" or texto == "Spotify":
+    elif texto == "spotify" or texto == "Spotify":
         with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
             try:
                 text = r.recognize_google(audio)
-                print("you said _ {}".format(text))
+                print("tu estas buscando _ {}".format(text))
                 url = 'https://open.spotify.com/search/'
                 search_url = url + text
                 webbrowser.open(search_url)
             except:
                 print("no se escucho")
-    if texto == "youtube" or texto == "Youtube" or texto == 'YouTube':
+    elif texto == "youtube" or texto == "Youtube" or texto == 'YouTube':
         with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
@@ -49,7 +49,7 @@ with sr.Microphone() as source:
                 webbrowser.open(search_url)
             except:
                 print("no se escucho")
-    if texto == "facebook" or texto == "Facebook" or texto == 'FaceBook':
+    elif texto == "facebook" or texto == "Facebook" or texto == 'FaceBook':
         with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
@@ -61,7 +61,8 @@ with sr.Microphone() as source:
                 webbrowser.open(search_url)
             except:
                 print("no se escucho")
-
+    else:
+        print("no se entendio")
 
 
 
