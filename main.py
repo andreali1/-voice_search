@@ -11,14 +11,14 @@ r = sr.Recognizer()
 with sr.Microphone() as source:
     print('Dicte donde desea realizarla busqueda : ')
     audio = r.listen(source)
-    texto = r.recognize_google(audio)
+    texto = r.recognize_google(audio, language='es-ES')
     print(texto)
     if texto == "google" or texto == "Google":
         with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
             try:
-                text = r.recognize_google(audio)
+                text = r.recognize_google(audio, language='es-ES')
                 print("estas buscando _ {}".format(text))
                 url = 'https://www.google.co.in/search?q='
                 search_url = url + text
@@ -30,7 +30,7 @@ with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
             try:
-                text = r.recognize_google(audio)
+                text = r.recognize_google(audio, language='es-ES')
                 print("tu estas buscando _ {}".format(text))
                 url = 'https://open.spotify.com/search/'
                 search_url = url + text
@@ -42,7 +42,7 @@ with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
             try:
-                text = r.recognize_google(audio)
+                text = r.recognize_google(audio, language='es-ES')
                 print("tu has dicho _ {}".format(text))
                 url = 'https://www.youtube.com/results?search_query='
                 search_url = url + text
@@ -54,7 +54,7 @@ with sr.Microphone() as source:
             print('Dicte lo que desea buscar en {}'.format(texto))
             audio = r.listen(source)
             try:
-                text = r.recognize_google(audio)
+                text = r.recognize_google(audio, language='es-ES')
                 print("tu has dicho _ {}".format(text))
                 url = 'https://www.facebook.com/search/top/?q='
                 search_url = url + text

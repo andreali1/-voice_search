@@ -1,0 +1,19 @@
+import speech_recognition as sr
+from gtts import gTTS
+import playsound
+import gi
+import pyaudio
+r = sr.Recognizer()
+
+with sr.Microphone() as source:
+    print('empieza a hablar : ')
+    audio = r.listen(source)
+
+    try:
+        text = r.recognize_google(audio)
+        print('tu has dicho: {}'.format(text))
+    except:
+        print("no se escucho")
+        tts=gTTS('perdon no te escuche bien ', lang='es-us')
+        tts.save("primeraudio.mp3")
+        playsound.playsound('/PycharmProjects/aipersonal/primeraudio.mp3')
