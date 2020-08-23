@@ -78,7 +78,6 @@ with sr.Microphone() as source:
 
 
 
-        print("hola mundo ")
 
 
     elif texto == 'nota' or texto == 'Nota' or texto == 'toma nota':
