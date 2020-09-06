@@ -2,6 +2,7 @@ import speech_recognition as sr
 import webbrowser
 from gtts import gTTS
 #comentario de prueba
+# cris guardame el machito pelase
 from playsound import playsound
 #rguarado el archivo quqe genera el sonido
 NOMBRE_ARCHIVO = "sonido_generado.mp3"
