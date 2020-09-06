@@ -5,3 +5,5 @@ with sr.Microphone() as source:
     audio = r.listen(source)
     texto = r.recognize_google(audio, language='es-ES')
     print(texto)
+
+    #funcion solo para pruebas de como reconoce el dictado.... si lo reconoce como mayusculas o minusculas
