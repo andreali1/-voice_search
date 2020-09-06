@@ -17,3 +17,4 @@ with sr.Microphone() as source:
         tts=gTTS('perdon no te escuche bien ', lang='es-us')
         tts.save("primeraudio.mp3")
         playsound.playsound('/PycharmProjects/aipersonal/primeraudio.mp3')
+gayy
