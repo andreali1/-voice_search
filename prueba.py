@@ -3,7 +3,7 @@ import webbrowser
 from gtts import gTTS
 
 from playsound import playsound
-
+# perrosmel de mierda gaaaaaaaaaaa
 # rguarado el archivo quqe genera el sonido
 NOMBRE_ARCHIVO = "sonido_generado.mp3"
 # primer texto q se guiarda en el MP3 y luego se reproduyce --- lang es paa el idioma
