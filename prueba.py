@@ -123,3 +123,4 @@ with sr.Microphone() as source:
             with open(NOMBRE_ARCHIVOd, "wb") as archivod:
                 tts.write_to_fp(archivod)
             playsound(NOMBRE_ARCHIVOd)
+# tyerminanado con git  pruebneas
