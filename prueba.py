@@ -1,29 +1,53 @@
-import speech_recognition as sr
+git import speech_recognition as sr
 import webbrowser
 from gtts import gTTS
 
 from playsound import playsound
+#rguarado el archivo quqe genera el sonido
 NOMBRE_ARCHIVO = "sonido_generado.mp3"
+#primer texto q se guiarda en el MP3 y luego se reproduyce --- lang es paa el idioma
 tts = gTTS('Hola andre en que puedo ayudarte.', lang='es-ES')
 # Nota: podríamos llamar directamente a save
+#abriendo archivo donde se guarda el texto para convertirlo a audio
+#y creando el archivo MP3
 with open(NOMBRE_ARCHIVO, "wb") as archivo:
     tts.write_to_fp(archivo)
+#reproduciendo el archivo  de audio creado desde el textos
 playsound(NOMBRE_ARCHIVO)
+
+#empezando a habalr con la maquina
+#objeto para implementar el reconocimientyo de voz
+
 r = sr.Recognizer()
+# encendiendo y usando el microfono para el guardar el dictadop
 with sr.Microphone() as source:
+
     print('Dictame en que puedo ayudarte : ')
     audio = r.listen(source)
+    #reconocieno el texto dictado
     texto = r.recognize_google(audio, language='es-ES')
     print(texto)
+
+    #----------------------------------------
+    #primer accion  busuqeda en navegador
+    #---------------------------------------
+
+    #validando el texto dicatado para mas acciones
     if texto == "buscar" or texto == "Buscar" or texto == 'búsqueda':
+        #creando el archivo para audio del asistente con el texto de abajo
         NOMBRE_ARCHIVOb = "sonido_generadob.mp3"
         tts = gTTS('En que pagina deseas realizar la busqueda, puedo ayudarte a buscar en google, spotify, youtube, facebook ', lang='es-ES')
+        #abriendo el archivo donde se va guaradar el texto ingresado
         with open(NOMBRE_ARCHIVOb, "wb") as archivob:
             tts.write_to_fp(archivob)
+        #reproduciendo el archivo
         playsound(NOMBRE_ARCHIVOb)
+        #objeto para reconocimiento de voz
         r = sr.Recognizer()
+        #iniciando microfono
         with sr.Microphone() as source:
-            print("empezanodo con busquedas")
+            print("empezando con busquedas")
+            #emepzando el reconocimiento de voz
             audio = r.listen(source)
             texto = r.recognize_google(audio, language='es-ES')
             print(texto)
@@ -78,7 +102,9 @@ with sr.Microphone() as source:
 
 
 
-
+    # ----------------------------------------
+    # primer accion  busuqeda en navegador
+    # ---------------------------------------
 
 
     elif texto == 'nota' or texto == 'Nota' or texto == 'toma nota':
@@ -98,13 +124,3 @@ with sr.Microphone() as source:
             with open(NOMBRE_ARCHIVOd, "wb") as archivod:
                 tts.write_to_fp(archivod)
             playsound(NOMBRE_ARCHIVOd)
-
-
-
-
-
-
-
-
-
-
